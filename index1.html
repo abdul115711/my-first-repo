@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalehHub | Stories of Resilience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --emerald: #064E3B;
+            --gold: #B45309;
+            --sand: #FDFBF7;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--sand); }
+        h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .btn-muraqqa { background-color: var(--emerald); color: white; transition: 0.3s; }
+        .btn-muraqqa:hover { background-color: #043d2e; transform: translateY(-2px); }
+        .btn-rawi { border: 2px solid var(--gold); color: var(--gold); transition: 0.3s; }
+        .btn-rawi:hover { background-color: var(--gold); color: white; }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <header class="relative h-[400px] flex items-center justify-center text-center px-4 overflow-hidden bg-[#022c22]">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]"></div>
+        <div class="relative z-10">
+            <h1 class="text-5xl md:text-7xl text-amber-100 mb-4">SalehHub</h1>
+            <p class="text-amber-200/80 italic text-lg max-w-2xl mx-auto">
+                "Finding Wholesomeness in the Heart of Hardship" — Inspired by Surah At-Talaq
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 -mt-16 relative z-20 pb-20">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="glass-card p-10 rounded-2xl shadow-xl border-t-4 border-emerald-900">
+                <h3 class="text-2xl font-serif font-bold text-emerald-900 mb-2">Be a Muraqqa</h3>
+                <p class="text-gray-600 mb-6">Share your academic struggle and the patience that pulled you through.</p>
+                <button onclick="openPortal()" class="btn-muraqqa w-full py-4 rounded-lg font-bold uppercase tracking-widest text-sm">Pass the Test</button>
+            </div>
+            <div class="glass-card p-10 rounded-2xl shadow-xl border-t-4 border-amber-600">
+                <h3 class="text-2xl font-serif font-bold text-amber-700 mb-2">Be a Rawi</h3>
+                <p class="text-gray-600 mb-6">Seek the light and motivation from those who have walked the path before.</p>
+                <button onclick="alert('Welcome, Rawi. Explore the wisdom below.')" class="btn-rawi w-full py-4 rounded-lg font-bold uppercase tracking-widest text-sm">Browse Wisdom</button>
+            </div>
+        </div>
+
+        <section id="portal" class="hidden glass-card p-10 rounded-2xl shadow-2xl mb-12 border-2 border-emerald-100">
+            <h2 class="text-3xl font-serif text-emerald-900 mb-6">Eligibility Gate</h2>
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-sm font-bold text-emerald-900 uppercase mb-2">Current Stature (Degree)</label>
+                    <select id="degree" class="w-full p-4 rounded-lg border-2 border-emerald-50 focus:border-emerald-500 outline-none transition">
+                        <option value="5">Bachelors Student (Base Value)</option>
+                        <option value="8">Masters Candidate (Higher Value)</option>
+                        <option value="10">PhD Scholar (Elite Value)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-emerald-900 uppercase mb-2">Potential: Facing an Academic Failure</label>
+                    <select id="potential" class="w-full p-4 rounded-lg border-2 border-emerald-50 focus:border-emerald-500 outline-none transition">
+                        <option value="2">I believe the system is unfair and I give up.</option>
+                        <option value="6">I try again but only because I have no choice.</option>
+                        <option value="10">I trust Allah's timing and use it to grow stronger.</option>
+                    </select>
+                </div>
+                <button onclick="runAlgorithm()" class="w-full bg-emerald-900 text-white py-5 rounded-lg font-bold text-lg hover:shadow-lg transition">Check My Score</button>
+                <div id="statusMessage" class="mt-4 p-4 rounded-lg text-center font-bold hidden"></div>
+            </div>
+        </section>
+
+        <div class="space-y-8">
+            <h2 class="text-2xl font-serif text-gray-800 border-b-2 border-amber-200 inline-block pb-1">Recent Reflections</h2>
+            
+            <article class="bg-white p-8 rounded-xl shadow-sm border-l-8 border-emerald-800">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-emerald-50 text-emerald-800 px-3 py-1 rounded text-xs font-bold uppercase">PhD Life</span>
+                    <span class="text-gray-400 text-sm">5 Min Read</span>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-3">The Gift of Uncertainty</h3>
+                <p class="text-gray-600 leading-relaxed italic mb-6">"Ustadh Nouman said that Taqwa is not just about prayer, it is about being mindful of Allah in the dark moments of our research..."</p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white font-bold mr-3">A</div>
+                    <div>
+                        <p class="text-sm font-bold">Muraqqa Abdullah</p>
+                        <p class="text-xs text-gray-400">Verified Scholar</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        function openPortal() {
+            document.getElementById('portal').classList.remove('hidden');
+            document.getElementById('portal').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function runAlgorithm() {
+            const D = parseFloat(document.getElementById('degree').value);
+            const P = parseFloat(document.getElementById('potential').value);
+            
+            // Formula: (60% Weight to Degree + 40% Weight to Potential Mindset)
+            const finalScore = (D * 0.6) + (P * 0.4);
+            const percentage = (finalScore / 10) * 100;
+
+            const msg = document.getElementById('statusMessage');
+            msg.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-emerald-100', 'text-emerald-700');
+
+            if (percentage >= 50) {
+                msg.classList.add('bg-emerald-100', 'text-emerald-700');
+                msg.innerHTML = `MASHALLAH! Score: ${percentage}% - You are eligible to be a Muraqqa.`;
+            } else {
+                msg.classList.add('bg-red-100', 'text-red-700');
+                msg.innerHTML = `SABR REQUIRED. Score: ${percentage}% - You need more resilience to lead others.`;
+            }
+        }
+    </script>
+</body>
+</html>
